@@ -212,6 +212,7 @@ iframe {
     width: 300px;
     resize: both;
     overflow: auto;
+    padding-bottom: 20px;
 }
 
 
