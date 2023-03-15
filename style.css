@@ -203,6 +203,7 @@ iframe {
     resize: both;
     overflow: auto;
     margin-bottom: 80px;
+    border-radius: 5px;
 }
 
 
