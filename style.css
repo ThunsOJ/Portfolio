@@ -183,7 +183,7 @@ article .fa{
 }
 
   /*tog från nätet för zoom möjligheter*/
-article:has(:hover, :focus) {
+article :hover {
     --img-scale: 1.1;
     --title-color: #28666e;
 }
