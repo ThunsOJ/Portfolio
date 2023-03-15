@@ -8,6 +8,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
+    box-sizing: border-box;
 }
 
 body{
@@ -27,7 +28,7 @@ header{
 }
 
 /*Är onödig för mindre skärmen men centrerar innehållet när skärmen vidgas*/
-.inner_header{
+.inner-header{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -71,10 +72,8 @@ nav a:hover{
     background-color: rgba(160, 160, 160, 0.534);
 }
 
-#banner{
+#home{
     display: flex;
-    width: 100%;
-    min-height: calc(100vh - 80px);
 }
 
 section{
@@ -90,17 +89,17 @@ section{
     
 }
 
-#banner img{
+#home img{
     right: 0px;
     height: calc(75vh - 80px);
     margin-top: 15vh;
 }
 
-#title{
+h1{
     font-size: 20px;
 }
 
-#banner p{
+#home p{
     font-size: 0.7rem;
 }
 
@@ -129,51 +128,54 @@ main{
 .description p{
     letter-spacing: 0.04em
 }
-
-article {
+  
+.row {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+  
+.card {
     position: relative;
     border-radius: 16px;
-    box-shadow: none;
+    width: 80%;
     background: #fff;
-    transform-origin: center;
-    transition: all 0.4s ease-in-out;
+    color: black;
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+    transition: 0.3s;
     overflow: hidden;
-    color: #101010;
-    height: 100%;
+}
+  
+.card-header {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16/9;
+    overflow: hidden;
 }
 
-article h2 {
+.card-header img{
+    width: 100%;
+}
+
+
+.card h2{   
     font-family: 'Shantell Sans', cursive;
     margin: 0 0 10px 0;
     font-size: 1.9rem;
     letter-spacing: 0.06em;
-    color: var(--title-color);
-    transition: color 0.3s ease-out;
-  }
+}
+  
 
-article p{
-    letter-spacing: 0.04em
-}
-  
-figure {
-    margin: 0;
-    padding: 0;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-}
-  
-article img {
-    max-width: 100%;
-    transform-origin: center;
-    transform: scale(var(--img-scale));
-    transition: transform 0.4s ease-in-out;
-}
-  
-.article-body {
-    padding: 24px;
-}
 
-article .fa{
+.card-body {    
+    padding: 30px 20px;
+    font-size: 18px;
+}
+  
+.card-body .fa {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -181,23 +183,11 @@ article .fa{
     padding: 10px;
     color: black;
 }
-
-  /*tog från nätet för zoom möjligheter*/
-article :hover {
-    --img-scale: 1.1;
-    --title-color: #28666e;
-}
   
-.articles {
-    margin-top: 80px;
-    margin-bottom: 80px;
-    display: grid;
-    max-width: 1200px;
-    margin-inline: auto;
-    padding-inline: 24px;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
-}
+.card:hover {
+    transform: scale(1.1);
+    color: #28666e;
+}  
 
 .map{
     width: 100%;
@@ -269,16 +259,16 @@ hr{
 }
 
 @media screen and (min-width: 600px) {
-    #title{
+    h1{
         font-size: 40px;
     }
 
-    #banner img{
+    #home img{
         margin: 0;
         height: calc(100vh - 80px);
     }
 
-    #banner p{
+    #home p{
         font-size: 1rem;
     }
 
@@ -287,6 +277,10 @@ hr{
         width: 600px;
         resize: both;
         overflow: auto;
+    }
+
+    .card{
+        width: 40%;
     }
 }
 
@@ -297,8 +291,12 @@ hr{
         flex-direction: row;
     }
 
-    #title{
+    h1{
         font-size: 75px;
+    }
+
+    .card{
+        width: 30%;
     }
    
 }
@@ -312,6 +310,10 @@ hr{
 
     nav a{
         font-size: 20px;
+    }
+
+    .card{
+        width: 20%;
     }
 
 }    
